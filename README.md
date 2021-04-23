@@ -27,3 +27,12 @@ Well, it might be free and made by very small "team" but it doesn't mean that it
 
 # License - GNU GPLv3
 Checkout the COPYING.txt for the full license
+
+# Information
+Bot is build using [dbd.js](https://dbd.js.org/) package.
+To install it, run `npm i dbd.js` in your command prompt,
+or by adding `"dbd.js": "^3.0.6"` to your `package.json` file.
+Docs for that package may be found [there](https://dbd.leref.ga/)
+
+You can invite bot from [there](https://top.gg/bot/794583111647494174/invite/). 
+Currently in **65+** servers with more than **14k** users
