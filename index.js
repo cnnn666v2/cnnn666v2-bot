@@ -1,39 +1,7 @@
-
-
-//const express = require('express')
-//const app = express()
- 
-//app.get('/', function (req, res) {
- //res.send('I am up!')
-//})
- 
-//app.listen(1900)//change to ur port
-
-
-
-//const Discord = require('discord.js');
-//const client = new Discord.Client()
-//const { apiToken } = require('./config.json');
-
-/*const DBL = require('dblapi.js');
-const dbl = new DBL(apiToken, {webhookPort: 1900, webhookAuth: 'MinecraftowyJan0'})// in webhookport: 9008, replace the "9008" with your host's port. in "AnyPassword" u can choose a random password.
-
-dbl.webhook.on('vote', (vote) => {
-console.log(`${vote.user} has voted me!`)
-const webhook = new Discord.WebhookClient("824980974127284245","m7wvzJWsrcRUvPBurZkNrIIUVbCHllSwxpWrq2_QnUInm-IDAskeolEv7FUtSThZcup5")//replaces with ur webhook information
- webhook.send(`<@${vote.user}> (\`${vote.user}\`) has voted me!`) 
-});
-dbl.webhook.on('ready', hook => {
- console.log(`Webhook up and running at http://${hook.hostname}:${hook.port}${hook.path}`);
-});*/
-
-//=================================================================================================================================================================//
-//=================================================================================================================================================================//
-
 const dbd = require("dbd.js");
 
 const bot = new dbd.Bot({
-token: "Nzk0NTgzMTExNjQ3NDk0MTc0.X-87MA.Km8Dps8mAJ15oBMneZAxTcpSMA0", 
+token: "Bot's token there", 
 prefix: "$getServerVar[svpx6]" 
 })
 
@@ -365,110 +333,6 @@ $updateCommands
 $onlyForIDs[596296441505513483;:x: Only bot developer can do that!] `
 })
 
-// bot.command({
-    //name: "yt",
-    //code: `Search: $message
-//Title: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;title]
-//URL: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;url]
-//Thumbnail: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;thumbnail]
-//Duration: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;duration]
-//Uploaded: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;uploaded]
-//Views: $jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;views]
-//Uploader: 
-//$jsonRequest[http://api.somecool.repl.co/yt-search?search=$message;uploader_name]
-//`})
-
-//bot.command({
-  //name: "contains",
-  //code: `
-//$if[$checkContains[$toLowercase[$message];testportal;anti tesportal; anty testportal; anti-testportal;wtyczka;nadal;jeszcze]==true]
-//$randomText[Tak;Jeszcze jak]
-//$endif
-//`
-//})
-
-
-////////HUNT - RPG
-//$if[$setGlobalUserVar[health;$sub[$getGlobalUserVar;$random[1;10]]]=<0;You died and your level went down!]
-//$setGlobalUserVar[RLevel;$sub[$getGlobalUserVar[RLevel];1]]
-//$else
-//$endif
-
-//$setGlobalUserVar[health;$sub[$getGlobalUserVar;$random[1;10]]]
-
-
-//$setGlobalUserVar[health;$sub[$getGlobalUserVar;$random[1;10]]]
-
-//$setGlobalUserVar[XP;$sum[$getGlobalUserVar[XP];$random[1;50]]]
-//$onlyIf[$getGlobalUserVar[hunterRifle]==1;:x: You need to buy hunter rifle!]
-//$globalCooldown[5m;:x: You need to wait %time% to hunt again!]
-
-/////
-
-//$if[$sub[$getGlobalUserVar[health];$random[1;10]]<=0]
-//You died and your level went down!
-//$setGlobalUserVar[RLevel;$sub[$getGlobalUserVar[RLevel];1]]
-//$endif
-///////////////////////////////////
-
-
-//ROB V2
-//bot.command({
-  //name: "rob",
-  //code: `$setGlobalUserVar[Money;$replaceText[$replaceText[$checkCondition[$randomText[sum;sub]==sum];true;$sub[$getGlobalUserVar[Money;$findUser[$message[1]]];$random[1000;//$getGlobalUserVar[Money;$findUser[$message[1]]]]]];false;$getGlobalUserVar[Money;$findUser[$message[1]]]];$findUser[$message[1]]]
-
-
- //$setGlobalUserVar[Money;$replaceText[$replaceText[$checkCondition[$randomText[sum;sub]==sum];true;$sum[$getGlobalUserVar[Money;$authorID];$random[1000;$getGlobalUser
-//Var[Money;$authorID]]];false;$sub[$getGlobalUserVar[money;$authorID];$random[1000;$getGlobalUserVar[Money;$findUser[$message[1]]]];$authorID]
-
-
-//$title[$replaceText[$replaceText[$randomText[sum;sub];sum;Rob - success];sub;Rob - fail]]
-//$author[$userTag[$authorID];$authorAvatar]
-//$description[You $replaceText[$replaceText[$randomText[sum;sub];sum;successfully robbed];sub;you failed the robbery] //$replaceText[$replaceText[$randomText[sum;sub];sum;and managed to steal $random[1000;$getGlobalUserVar[Money;$findUser[$message[1]] from //$userTag[$findUser[$message[1]]]];sub;and got fined $random[1000;$getGlobalUserVar[Money;$findUser[$message[1]] :pound:]]
-
-//$footer[By $username[$authorID]]
-//$color[RANDOM]
-
-
-
-
-//$cooldown[12h;❌You need to wait %time% before using this command again]
-//$onlyIf[$getGlobalUserVar[Money;$authorID]>=1000;❌You need to atleast have 1000 :pound: to rob!]
-//$onlyIf[$getGlobalUserVar[Money;$findUser[$message[1]]]>=1000;❌The mentioned user need to atleast have 1000 :pound: to rob him]
-//$onlyIf[$findUser[$message[1]]!=$authorID;❌You can't rob yourself] `
-//})
-
-//ROB
-//bot.command({
-  //name: "rob",
-  //code: `$color[RANDOM]
-//$title[Robber]
-//$if[$random[1;3]==1]
-//$description[$username successfuly robbed <@$mentioned[1]> and got $random[1;$getGlobalUserVar[Money;$mentioned[1]]] :pound:]
-//$setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money;$authorID];$random[1;$getGlobalUserVar[Money;$mentioned[1]]]];$authorID]
-//$setGlobalUserVar[Money;$sub[$getGlobalUserVar[Money;$mentioned[1]];$random[1;$getGlobalUserVar[Money;$mentioned[1]]]];$mentioned[1]]
-
-//$else
-//$description[$username got caught while robbing <@$mentioned[1]> and had to pay $random[1;1000] :pound: fine]
-//$setGlobalUserVar[Money;$sub[$getGlobalUserVar[Money;$authorID];$random[1;1000]];$authorID]
-//$endif
-
-//$onlyIf[$getGlobalUserVar[Money]>=1000;You need at least 1000 :pound: to rob someone!]
-//$onlyIf[$getGlobalUserVar[Money;$mentioned[1]]>=2000;Person you wanna rob needs at least 2000 :pound: !]
-//$argsCheck[>1;:x: You need to mention someone!]`
-//})
-
-
-//meet.google.com/iao-kdia-xae oraz login: zsegrudziadz2021@gmail.com i hasło: zse2021$ - 01.03.2021
-
-//SETUP
-
-//$suppressErrors[{title: Bot Setup};{description:Hey, seems like you wanna run setup. It will grant you following:
-//- Muted role
-//- DJ role
-//- Custom Server description};{footer: Are you sure you wanna continue? Yes - <a:yes:796678250264789032> | No - <a:no:796678226231558184>};{suppress:yes/no}]
-
-///Setting-up
 bot.awaitedCommand({
   name: "setup-confirmed",
   code: `$title[Thank you!]
@@ -768,12 +632,3 @@ bot.command({
   name: "hos",
   code: "soon"
 })
-
-/////////////////////////////////////////////////////
-
-
-////// I N F O R M A T I V E //////
-//USER INFO
-
-
-//SERVER INFO
