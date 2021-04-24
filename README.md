@@ -36,3 +36,6 @@ Docs for that package may be found [there](https://dbd.leref.ga/)
 
 You can invite bot from [there](https://top.gg/bot/794583111647494174/invite/). 
 Currently in **65+** servers with more than **14k** users
+
+## Code info
+In some commands, it's messed up. It'll be changed in the future or never
