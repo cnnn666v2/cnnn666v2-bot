@@ -31,7 +31,7 @@ Checkout the COPYING.txt for the full license
 # Information
 Bot is build using [dbd.js](https://dbd.js.org/) package.
 To install it, run `npm i aoi.js` in your command prompt,
-or by adding `"aoi.js": "^1.01"` to your `package.json` file.
+or by adding `"aoi.js": "^1.0.1"` to your `package.json` file.
 Docs for that package may be found [there](https://dbd.leref.ga/)
 
 You can invite bot from [there](https://top.gg/bot/794583111647494174/invite/). 
