@@ -1,6 +1,6 @@
-const dbd = require("dbd.js");
+const Aoijs = require("aoi.js");
 
-const bot = new dbd.Bot({
+const bot = new Aoijs.Bot({
 token: "Bot's token there", 
 prefix: "$getServerVar[svpx6]" 
 })
