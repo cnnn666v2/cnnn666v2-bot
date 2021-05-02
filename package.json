@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dbd.js": "^2.2.6",
+    "aoi.js": "^1.0.1",
     "dbd.express": "^1.0.1",
     "dbd.js-utils": "0.0.4",
     "discord.js": "^12.5.1",
