@@ -16,5 +16,5 @@ $globalCooldown[2h;:x: You're tired. Wait %time% and go on the adventure again!]
 $onlyIf[$getGlobalUserVar[atk]>=2;:x: You think you will punch enough? Go equip better weapon than fists!]
 
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

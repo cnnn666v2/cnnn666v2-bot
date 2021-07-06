@@ -24,5 +24,5 @@ Req: 10 Sand
 ]
 $footer[Crafting - because why not? | Page: 1/$getVar[craft_pt] | Version: $getVar[version]]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

@@ -6,7 +6,7 @@ $thumbnail[$userAvatar[794583111647494174]]
 $if[$getGlobalUserVar[lang]==en]
 $title[Cnnn666v2 | Free&Open-Source bot;https://cnnn666v2.gq]
 $description[Hello $username! Here you will find all commands avaible in bot. However, if you want more detailed info about these, visit my [website](https://cnnn666v2.gq/commands.html)
-**Note:** Remember to report all issues to Cnnn666#5460 or in [support server](https://discord.gg/mt4hDxQpPg)
+**Note:** Remember to report all issues to Cnnn666#5460 or in [support server]($getVar[support_server])
 $getVar[motd]]
 
 $addField[Categories *[Coming Soon]*:;:crown: Halls - **$getServerVar[svpx6]halls**
@@ -31,6 +31,6 @@ $addField[Categories *[Avaible]*:;:pound: Economy - **$getServerVar[svpx6]help-e
 $footer[Created and developed by: Cnnn666#5460 | Version: $getVar[version];$userAvatar[596296441505513483]]
 $endif
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })
 //$addReactions[💷;🛡️;🎵;🗡️;📊;🎩;<:vip:796497627822686270>;🎖️;🕹️;🏳️;⛳;<a:Developer:815230638365212712>;⚙️]

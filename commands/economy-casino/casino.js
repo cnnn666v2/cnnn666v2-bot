@@ -11,5 +11,5 @@ $addField[Roulette • \`$getServerVar[svpx6]roulette <amount> <green/red/black>
 $addField[Slot machine • \`$getServerVar[svpx6]slot <amount>\`;Ya like risk? Take it with high amounts! Loser or win!;yes]
 $footer[$$$ casino $$$ | Version: $getVar[version]]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

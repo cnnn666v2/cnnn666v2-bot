@@ -11,5 +11,5 @@ $setGlobalUserVar[Money;$sub[$getGlobalUserVar[Money];2000]]
 $onlyIf[$getGlobalUserVar[Money]>=2000;:x: You need 2000 :pound: to buy fishing rod!]
 $onlyIf[$getGlobalUserVar[fishingRod]==0;:x: You can't have 2 fishing rods!]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

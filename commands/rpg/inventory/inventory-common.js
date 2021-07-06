@@ -33,7 +33,7 @@ Stick: $getGlobalUserVar[sticks;$mentioned[1;yes]];yes]
 $footer[Season: $getVar[season] | Page: 1/$getVar[inventory_pt] | Version: $getVar[version]]
 $endif
 
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })
 
 //$addField[:mega: • Sneakpeak:;New inventory soon!;yes]

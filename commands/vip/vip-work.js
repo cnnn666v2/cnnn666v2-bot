@@ -8,5 +8,5 @@ $globalCooldown[15m;You can work every 15m. Wait %time% and work again]
 $setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money];$random[100;250]]]
 $onlyIf[$getGlobalUserVar[vip]==1;:x: You're not vip user! Buy it using \`$getServerVar[svpx6]buy-item-vip\`]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake] `
 })

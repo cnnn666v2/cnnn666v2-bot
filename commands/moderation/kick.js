@@ -20,5 +20,5 @@ $color[RANDOM]
 $suppressErrors[:x: You have to mention someone!]
 $onlyPerms[kick;:x: You need \`kick\` permission to use this command!]
 
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

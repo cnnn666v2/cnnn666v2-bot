@@ -7,5 +7,5 @@ module.exports = ({
   $footer[Queue -> $getServerVar[svpx6]queue | Version: $getVar[version]]
 $suppressErrors[:x: Something went wrong]
 
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

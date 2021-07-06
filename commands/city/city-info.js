@@ -30,5 +30,5 @@ How can I build houses?
 My question isn't here, wher can I get anwser?
 - join support server!]
 $footer[City - BETA in 1.5 | Version: $getVar[version]]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

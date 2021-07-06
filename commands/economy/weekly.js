@@ -7,5 +7,5 @@ $footer[Wanna too? $getServerVar[svpx6]weekly | Version: $getVar[version]]
 $setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money];$random[4000;8000]]]
 $globalCooldown[1w;You claimed your weekly reward already! Claim it again in %time%]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

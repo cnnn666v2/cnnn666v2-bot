@@ -29,5 +29,5 @@ $onlyIf[$getGlobalUserVar[Money]>2500;:x: You need more than 2500 :pound: to rob
 $onlyIf[$getGlobalUserVar[Money;$mentioned[1]]>2500;:x: You can't rob people which have less (or equal) than 2500 :pound:]
 $onlyIf[$isMentioned[$mentioned[1]]==true;:x: You need to mention someone!]
 $onlyIf[$mentioned[1]!=$authorID;:x: You can't rob yourself!]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 }

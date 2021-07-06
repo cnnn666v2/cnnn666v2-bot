@@ -14,5 +14,5 @@ $endif
 $footer[$randomText[Crime;Gun;Knife;Dagger;Sword;Grenade;Fortnite] is my life - $username | Version: $getVar[version]]
 $globalCooldown[12h;You can't rob for %time%]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

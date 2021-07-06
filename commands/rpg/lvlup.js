@@ -16,5 +16,5 @@ $setGlobalUserVar[ReqXP;$sum[$getGlobalUserVar[ReqXP];$getGlobalUserVar[ReqXP]]]
 $onlyIf[$getGlobalUserVar[XP]>=$getGlobalUserVar[ReqXP];:x: You don't have enough XP! You need $sub[$getGlobalUserVar[ReqXP];$getGlobalUserVar[XP]]]
 $footer[$randomText[Profile -> $getServerVar[svpx6]profile;Inventory -> $getServerVar[svpx6]inventory] | Version: $getVar[version]]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake] `
 })

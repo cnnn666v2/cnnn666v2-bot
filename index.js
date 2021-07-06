@@ -7,7 +7,7 @@ const bot = new Aoijs.Bot({
   sharding: false, //true or false 
   shardAmount: 2, //Shard amount 
   mobile: false, //true or false - Discord Mobile Status
-  token: "Nzk0NTgzMTExNjQ3NDk0MTc0.X-87MA.CLPhqG2j-s8UYMIriNWL8rGUGnI", 
+  token: "Nzk0NTgzMTExNjQ3NDk0MTc0.X-87MA.-mnbHBlZmR6W65eVkGnVsxgNJqg", 
   prefix: "$getServerVar[svpx6]",
   autoUpdate: true, // set to true if version should be updated automatically after a package update
 })
@@ -36,6 +36,7 @@ bot.variables({
   pro: "0",
   robM: "0",
   blocked: "0",
+  support_server: "https://discord.gg/mt4hDxQpPg",
 
   //announcements
    //main

@@ -14,5 +14,5 @@ $footer[Safety best | Version: $getVar[version]]
 $onlyIf[$checkContains[$message;Infinity]==false;:x: This is not a number]
 $onlyIf[$isNumber[$replaceText[$replaceText[$checkCondition[$message==all];true;$getGlobalUserVar[Money]];false;$message[1]]]==true;:x: This is not a number!]
 
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

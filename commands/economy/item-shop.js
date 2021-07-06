@@ -21,6 +21,6 @@ Fishing Rod | \`$getServerVar[svpx6]buy-item-frod\` | 2,000 :pound: | Common
 Hunter Rifle | \`$getServerVar[svpx6]buy-item-hrifle\` | 5,000 :pound: | Common]
 $footer[Badge shop $getServerVar[svpx6]shop-badge | Page 1/$getVar[shop_i_pt] | Version: $getVar[version]]
 $onlyIf[$message[1]==;]
-$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })
 //VIP | \`$getServerVar[svpx6]buy-item-vip\` | 100,000 :pound: | Uncommon
