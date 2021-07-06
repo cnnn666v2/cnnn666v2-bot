@@ -6,5 +6,9 @@ $thumbnail[$songInfo[thumbnail]]
   $title[Music - volume]
   $description[Volume has been set to: $message by $username]
   $footer[Version: $getVar[version] | Update: $getVar[updateName]]
-  $volume[$message]`
+  $volume[$message]
+
+$onlyIf[$isNumber[$message];:x: You need to provide a number!]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

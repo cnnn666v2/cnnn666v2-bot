@@ -12,5 +12,7 @@ $endif
 $else
 :x: You can't delete letters! Have you gone mad?
 $endif
-$onlyPerms[managemessages;:x: You need \`manage_messages\` permission] `
+$onlyPerms[managemessages;:x: You need \`manage_messages\` permission]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

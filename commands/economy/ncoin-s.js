@@ -10,5 +10,7 @@ $setGlobalUserVar[ncoin;$sub[$getGlobalUserVar[ncoin;$authorID];$message[1]];$au
 
 $suppressErrors[:x: Wrong usage! Right usage: \`$getServerVar[svpx6]n-sell <amount>\`]
 $argsCheck[>1;:x: You trying to sell nothing?]
-$onlyIf[$getGlobalUserVar[ncoin;$authorID]>=1;:x: You don't have any nCoin!]`
+$onlyIf[$getGlobalUserVar[ncoin;$authorID]>=1;:x: You don't have any nCoin!]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

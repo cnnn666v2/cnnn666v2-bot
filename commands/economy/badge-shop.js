@@ -21,5 +21,6 @@ item 2 | buy | price
 item 3 | buy | price
 item 4 | buy | price]
 $footer[Item shop $getServerVar[svpx6]shop | Page 1/$getVar[shop_b_pt] | Version: $getVar[version]]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

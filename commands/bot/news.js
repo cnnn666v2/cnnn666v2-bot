@@ -17,8 +17,12 @@ $description[**Update 1.3.2:**
 - fixed music commands
 - disabled \`$getServerVar[svpx6]hunt\`, \`$getServerVar[svpx6]fish\`, \`$getServerVar[svpx6]n-mine\` temporarily due to bugs
 - some music commands look better
-- fixed \`loop\` command - when 2nd time executed it was giving \`something went wrong\` error]
+- fixed \`loop\` command - when 2nd time executed it was giving \`something went wrong\` error
+
+**Update 1.3.2.3 - 25.05.2020:**
+- fixed ability to deposit or withdraw infinity money]
 $footer[Command ran by: $username#$discriminator[$authorID] | Version: $getVar[version] | Update: $getVar[updateName]]
 $addTimestamp
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

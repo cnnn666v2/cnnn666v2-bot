@@ -18,5 +18,7 @@ $addField[Here's the list:;- Steam Gift Cards - they'll be spent on.. um.. steam
 - PayPal - this one will be surely spent on VPS only, trust me - soon
 
 Oh, forgot to tell you that once you donate your badge is with you forever!]
-$footer[It's optional and I'm not forcing you to donate | Version: $getVar[version] | Season: $getVar[season]] `
+$footer[It's optional and I'm not forcing you to donate | Version: $getVar[version] | Season: $getVar[season]]
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

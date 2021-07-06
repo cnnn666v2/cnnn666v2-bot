@@ -7,7 +7,8 @@ $description[Successfuly turned off suggestions]
 $setServerVar[suggest;false]
 $onlyIf[$getServerVar[suggest]==true;:x: You already disabled suggestions!]
 $onlyIf[$hasPerms[$authorID;admin]==true;:x: Only admin can do that!]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })
 
 //On
@@ -19,5 +20,6 @@ $description[Successfuly turned on suggestions!]
 $setServerVar[suggest;true]
 $onlyIf[$getServerVar[suggest]==false;:x: You already enabled suggestions!]
 $onlyIf[$hasPerms[$authorID;admin]==true;:x: Only admin can do that!]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

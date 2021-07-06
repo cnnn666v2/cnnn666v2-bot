@@ -6,7 +6,9 @@ $footer[Powered by: Cnnn666v2 | Version: $getVar[version]]
 $dm[$mentioned[1]]
 $onlyPerms[ban;]
 $suppressErrors[:x: You have to menton someone!]
-$color[RANDOM] `
+$color[RANDOM]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;]`
 })
 module.exports = ({
   name: "ban",
@@ -17,5 +19,7 @@ $footer[Total bans: $banCount | Version: $getVar[version]]
 $ban[$mentioned[1]]
 $onlyPerms[ban;:x: You need \`ban\` permission to use this command!]
 $suppressErrors[:x: You have to menton someone!]
-$color[RANDOM] `
+$color[RANDOM]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

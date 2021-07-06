@@ -10,5 +10,6 @@ $addField[Server • Reports \`$getServerVar[svpx6]rep-<enable/disable>\`;Enable
 $addField[Server • Suggestions \`$getServerVar[svpx6]sug-<enable/disable>\`;Enables or disables suggestions on this server. Only admins;yes]
 $addField[Server • Prefix \`$getServerVar[svpx6]prefix <new prefix>\`;Changes \`$getServerVar[svpx6]\` to the provided one. Only admins;yes]
 $addField[Global • Language \`$getServerVar[svpx6]lang-<pl/en/de>\`;Sets bot's language to the provided one. For example, \`$getServerVar[svpx6]lang-pl\` sets language to polish. It's affecting only user and not server;yes]
-$onlyIf[$message[1]==;] `
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
 })

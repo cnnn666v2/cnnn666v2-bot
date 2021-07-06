@@ -1,7 +1,7 @@
 module.exports = ({
   name: "vip",
   code: `$color[RANDOM]
-$title[$customEmoji[vipCnnn666v2] | VIP - Info]
+$title[$customEmoji[vip;795676694161784922] | VIP - Info]
 $description[What **VIP** gives **you**:
 *Special commands:*
 Farm money faster with \`$getServerVar[svpx6]vip-work\` or \`$getServerVar[svpx6]vip-hourly\` (all commands below)
@@ -23,5 +23,7 @@ Economy:
 \`$getServerVar[svpx6]vip-hunt\` (soon)
 \`$getServerVar[svpx6]vip-shop/-badge\` (soon)
 \`$getServerVar[svpx6]vip-buy-item/badge\` (soon)]
-$onlyIf[$message[1]==;] `
+
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
 })

@@ -9,5 +9,7 @@ Change my mind]
 $argsCheck[>1;You have to type something!]
 $image[https://vacefron.nl/api/changemymind?text=$replaceText[$message; ;+;-1]]
 $color[$random[0000;9999999]]
-$addReactions[👍;👎] `
+$addReactions[👍;👎]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

@@ -16,5 +16,8 @@ Sure!"
 "Are we ready?
 Not yet, we'll need to wait a few months before we do it. We have to prepare for worst.
 Roger that!"]
-$footer[Season? :O $getServerVar[svpx6]season | Version: $getVar[version]] `
+$footer[Season? :O $getServerVar[svpx6]season | Version: $getVar[version]]
+
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

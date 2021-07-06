@@ -8,5 +8,7 @@ $setUserVar[SLevel;$sum[$getUserVar[SLevel];1]]
 $setUserVar[sXPreq;$sum[$getUserVar[sXPreq];$getUserVar[sXPreq]]]
 $setUserVar[sXP;0]
 $onlyIf[$getUserVar[sXP]>=$getUserVar[sXPreq];] 
-$onlyIf[$getServerVar[levelSYS]==0;]`
+$onlyIf[$getServerVar[levelSYS]==0;]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;]`
 })

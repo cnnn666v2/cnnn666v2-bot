@@ -1,16 +1,10 @@
 module.exports = ({
-  name: "loop",
-  code: `$if[$loopQueue==true]
-  $color[$random[0000;999999]]
-  $thumbnail[$songInfo[thumbnail]]
-  $title[$songInfo[title];$songInfo[url]]
-  $description[Started looping queue. Executed by: $username]
-  $footer[Version: $getVar[version]]
-  $else
-  $thumbnail[$songInfo[thumbnail]]
-  $title[$songInfo[title];$songInfo[url]]
-  $description[Stopped looping queue. Executed by: $username]
-  $footer[Version: $getVar[version]]
-  $endif
-$onlyIf[$message[1]==;]`
+    name: "lyrics",
+    code: `$title[Lyrics for - $songInfo[title]]
+$description[$jsonRequest[https://some-random-api.ml/lyrics?title=$replaceText[$songInfo[title]; ;+];lyrics;:x: No Lyrics Found for this song.]]
+$footer[Lyrics by: some-random-api.ml | Version: $getVar[version]]
+$color[RANDOM]
+$suppressErrors[:x: No song is being played!]
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

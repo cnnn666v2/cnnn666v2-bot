@@ -15,5 +15,6 @@ Starting in 1.4
 **Command list:** (soon)
 (All commands below starts with \`$getServerVar[svpx6]ses-<command>\`)
 \`drop\`, \`shop\`, \`mine\`, \`wish\`, \`daily\`]
-$onlyIf[$message[1]==;] `
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
 })

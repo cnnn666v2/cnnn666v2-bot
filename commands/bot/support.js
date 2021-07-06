@@ -25,7 +25,8 @@ Having issues with bot? Bot not responding? Duplicating money? Join support serv
 Cnnn666#5460 - Developer
 Vecto#6472 - Tester & Helper
 Y A H Y A#5882 - Tester & Helper]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })
 
 // **Bug catchers:**

@@ -7,5 +7,7 @@ module.exports = ({
   $description[Successfully set prefix to \`$message\`]
   $onlyIf[$message!=;You need to select a prefix]
   $footer[Version: $getVar[version] | Made by: Cnnn666#5460]
-  $onlyIf[$hasPerms[$authorID;admin]==true;:x: Only admin can change my prefix!]`
+  $onlyIf[$hasPerms[$authorID;admin]==true;:x: Only admin can change my prefix!]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

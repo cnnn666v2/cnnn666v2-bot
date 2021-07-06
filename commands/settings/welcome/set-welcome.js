@@ -10,7 +10,9 @@ $setServerVar[welcomeSYS;1]
 
 $onlyIf[$isMentioned[$mentionedChannels[1]]==true;:x: You have to mention channel!]
 $onlyIf[$mentionedChannels[1]!=:x: You have to mention channel!]
-$onlyIf[$hasPerms[$authorID;admin]==true;:x: You need \`administartor\` permission to set the welcome channel!] `
+$onlyIf[$hasPerms[$authorID;admin]==true;:x: You need \`administartor\` permission to set the welcome channel!]
+
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })
 
 //$onlyIf[$isNumber[$message]==true;:x: You have to mention channel!]

@@ -13,5 +13,7 @@ This feature is in beta and bugs may occur. There's list of all avaible radios r
 - MoreFM \`$getServerVar[svpx6]soon\`
 -- More radios cooming soon!
 note: this is not ready yet, this will be added later.]
-$footer[You can always play favourite music using "$getServerVar[svpx6]play your song" | Version: $getVar[version]] `
+$footer[You can always play favourite music using "$getServerVar[svpx6]play your song" | Version: $getVar[version]]
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

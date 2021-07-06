@@ -7,5 +7,6 @@ $thumbnail[$songInfo[thumbnail]]
   $description[Skipped to 2nd song in the queue for $username]
   $footer[Version: $getVar[version]]
 $skipSong
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

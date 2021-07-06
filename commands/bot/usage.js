@@ -7,13 +7,13 @@ $description[**Miscellaneous:**
 \`\`\`py
 Ping: $pingms
 Uptime: $uptime
-Disk: ~310Mb/4.5Gb
-RAM: $rammb/2Gb
+Disk: ~200Mb/11Gb
+RAM: $rammb/7Gb
 \`\`\`
 **CPU:**
 \`\`\`py
-CPU Usage: $cpu%/130%
-CPU Model: $djsEval[require ('os').cpus()\[0\\].model;yes] 
+CPU Usage: $cpu%/200%
+CPU Model: Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 
 CPU Platform: $djsEval[require ('os').platform();yes]
 \`\`\`
 **Hosting provider:**
@@ -24,5 +24,6 @@ Website: https://sweplox.se/?language=english&currency=
 \`\`\`
 ]
 $footer[Version: $getVar[version] | Wanna support bot? Donate me $getServerVar[svpx6]support]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

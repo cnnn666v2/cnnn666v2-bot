@@ -13,5 +13,8 @@ $setGlobalUserVar[XP;$sum[$getGlobalUserVar[XP];$random[25;75]]]
 $setGlobalUserVar[lb_common;$sum[$getGlobalUserVar[lb_common];$random[0;1]]]
 
 $globalCooldown[2h;:x: You're tired. Wait %time% and go on the adventure again!]
-$onlyIf[$getGlobalUserVar[atk]>=2;:x: You think you will punch enough? Go equip better weapon than fists!] `
+$onlyIf[$getGlobalUserVar[atk]>=2;:x: You think you will punch enough? Go equip better weapon than fists!]
+
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })

@@ -1,8 +1,15 @@
-const Aoijs = require("aoi.js");
-
+const discord = require('discord.js'); //Define the discord.js module
+const client = new discord.Client(); //Creating discord.js client (constructor)
+const disbut = require('discord-buttons')(client); //Starting the discord-buttons class
+const Aoijs = require("aoi.js")
+ 
 const bot = new Aoijs.Bot({
-token: "Bot's token there", 
-prefix: "$getServerVar[svpx6]" 
+  sharding: false, //true or false 
+  shardAmount: 2, //Shard amount 
+  mobile: false, //true or false - Discord Mobile Status
+  token: "Nzk0NTgzMTExNjQ3NDk0MTc0.X-87MA.CLPhqG2j-s8UYMIriNWL8rGUGnI", 
+  prefix: "$getServerVar[svpx6]",
+  autoUpdate: true, // set to true if version should be updated automatically after a package update
 })
 
 bot.loadCommands('./commands/')
@@ -22,11 +29,13 @@ bot.onMessage()
 // vars
 bot.variables({
   //misc
-  version: "1.3.2.2",
+  version: "1.3.2.3",
   updateName: "Economy Update - Re-write",
   season: "Apocalypse",
   motd: "**MOTD:** this message can be seen only once!",
   pro: "0",
+  robM: "0",
+  blocked: "0",
 
   //announcements
    //main
@@ -97,9 +106,15 @@ bot.variables({
          //assault
 
         //close fight
+    	 //shields
+    	 shield_wood: "0", 
+    	
          //swords
          sword_wood: "0",
          sword_iron: "0",
+    
+    	 //other
+    	 belt: "0",
 
       //misc
       book: "0",
@@ -133,9 +148,14 @@ bot.variables({
         wood_roof: "0",
         //stone
         //modern
-
+    
+	  //food
+      apple: "0",
+      bread: "0",
+    
       //resources
       wood_log: "0",
+      sticks: "0",
       stone: "0",
       dirt: "0",
       iron: "0",
@@ -179,6 +199,14 @@ bot.variables({
    welcome_ch: "null",
    goodbye_ch: "null",
    welcomeSYS: "0",
+   goodbyeSYS: "0",
+
+	//welcome profile
+	welcome_color: "RED",
+	welcome_thumbnail: "default",
+    welcome_bio: "Hi, I'm lost. Thanks for inviting me!",
+    
+    welcome_modMsg: "Hello! Remember to read rules first, have fun :D",
 
    //setup
    setup: "false",
@@ -190,7 +218,7 @@ bot.variables({
 
 //status
 bot.status({
-  text: "created with dbd.js and ♥️",
+  text: "created with aoi.js and ♥️",
   type: "PLAYING",
   time: 30
 })
@@ -207,16 +235,65 @@ bot.status({
   time: 30
 })
 
+bot.status({
+text: "Over $serverCount servers & $allMembersCount users!",
+type: "WATCHING",
+time: 30
+})
+
+bot.status({
+text: "My prefix: $getServerVar[svpx6] | Deafult prefix: c2?",
+type: "PLAYING",
+time: 30
+})
+
 //bot.status({
   //text: "re-writing proccess: 20%/100%",
   //type: "WATCHING",
   //time: 30
 //})
 
-bot.musicStartCommand({ 
- channel: "no", 
- code: `none` 
+bot.musicStartCommand({  
+ code: `:mag_right: Started searching $message...` 
 })
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                    ////////////////////////////////////////////////////// C A L L B A C K S //////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+bot.joinCommand({
+ channel: "$getServerVar[welcome_ch]", 
+ code: `$color[$getGlobalUserVar[welcome_color]]
+$thumbnail[$replaceText[$getGlobalUserVar[welcome_thumbnail];default;$userAvatar[$authorID]]]
+
+$title[Welcome $username :wave:]
+$description[**You just made us bigger! Now we're $membersCount members!**
+Some words from the server moderation: $getServerVar[welcome_modMsg]
+
+Little bio: $getGlobalUserVar[welcome_bio]]
+$footer[Welcome is in the beta testing! | Version: $getVar[version]]
+
+$onlyIf[$getServerVar[welcomeSYS]==1; ]` 
+})
+bot.onJoined() 
+
+bot.leaveCommand({
+    channel: "$getServerVar[goodbye_ch]",
+    code: `$color[$getGlobalUserVar[welcome_color]]
+$thumbnail[$replaceText[$getGlobalUserVar[welcome_thumbnail];default;$userAvatar[$authorID]]]
+
+$title[Goodbye $username :wave:]
+$description[**$username has left us :( Now we're $membersCount members**
+Some goodbyes from moderation: $getServerVar[welcome_modMsg]]
+$footer[Welcome is in the beta testing! | Version: $getVar[version]]
+
+$onlyIf[$getServerVar[goodbyeSYS]==1; ]`
+})
+bot.onLeave
+
+bot.createLavalink('lavalink1.sweplox.net:1119', 'sweploxhosting', false) 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -224,7 +301,7 @@ bot.musicStartCommand({
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bot.loopCommand({
-code:`$setVar[ncoinPrice;$random[100;2000]]`,
+code:`$setVar[ncoinPrice;$random[100;5000]]`,
 every: "3600000"// if 24h doesn't work use 86400000
 })
 
@@ -259,22 +336,13 @@ bot.command({
 $math[$message] `
 })
 
-bot.joinCommand({
- channel: "$getServerVar[welcome_ch]", 
- code: `$attachment[https://api.xzusfin.repl.co/card?avatar=$replaceText[$authorAvatar;.webp;.png;1]?size=2048&middle=Welcome&name=$replaceText[$replaceText[$username[$authorID]#$discriminator[$authorID];#;%23;-1]; ;%20;-1]&bottom=$replaceText[We are now $membersCount members; ;%20;-1]&background=https://cdn.discordapp.com/attachments/789656208276848682/798106281189572645/default11.png&text=%23ffffff&avatarborder=%23FFFFFF&avatarbg=%23FF28b3]
-$suppressErrors
-
-$onlyIf[$getServerVar[welcomeSYS]==1; ]` 
-})
-bot.onJoined() 
-
 //DEVELOPER - HELP
 bot.command({
-  name: "dev-help",
-  aliases: ["dev-info", "dev-info"],
+  name: "help-dev",
+  aliases: ["info-dev"],
   code: `$color[RANDOM]
   $title[❓ | Help Menu]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
+  $description[[Support Server](https://discord.gg/mt4hDxQpPg)
 Remember: only developer can use these (except tha last one ofc)]
 $addField[Developer Report (everyone can use) • \`$getServerVar[svpx6]dev-report <report>\`;Sends report to me. It can be bug, bot abuse, bot cheating, etc.;yes]
 $addField[Reboot • \`$getServerVar[svpx6]reboot <report>\`;Restarts bots. If the bot isn't responding for some time, you know why :wink:;yes]
@@ -304,13 +372,74 @@ $footer[Thank you!]
 $globalCooldown[12h; ] `
 })
 
+//DEVELOPER - BLOCK
+bot.command({
+	name: "block",
+    code: `$deletecommand
+$setGlobalUserVar[blocked;1;$mentioned[1]]
+
+$color[RANDOM]
+$title[Bot Ban - $username[$mentioned[1]]]
+$description[User <@$mentioned[1]> has been banned from using bot for: $messageSlice[1]]
+$footer[If you ever see anyone exploiting the bot, report it in the support server | version: $getVar[version]]
+
+$onlyIf[$message!=;:x: You need to enter ID of the person you want to ban!]
+$onlyForIDs[596296441505513483;:x: This is developer only command!] `
+})
+//DM BANNED
+bot.command({
+	name: "block",
+    code: `$deletecommand
+
+$color[RANDOM]
+$title[You have been banned from using this bot]
+$description[Cnnn666#5460 has banned you for: $messageSlice[1]
+If you believe that's a mistake, please contact me or any of avaible mods in the [**support server**](https://discord.gg/mt4hDxQpPg)]
+$footer[If you ever see anyone exploiting the bot, report it in the support server | version: $getVar[version]]
+
+$dm[$mentioned[1]]
+$suppressErrors
+$onlyForIDs[596296441505513483;] `
+})
+
+
+//DEVELOPER - UNBLOCK
+bot.command({
+	name: "unblock",
+    code: `$deletecommand
+$setGlobalUserVar[blocked;0;$mentioned[1]]
+
+$color[RANDOM]
+$title[Bot Unban - $username[$mentioned[1]]]
+$description[User <@$mentioned[1]> has been unbanned from using bot]
+$footer[If you ever see anyone exploiting the bot, report it in the support server | version: $getVar[version]]
+
+$onlyIf[$message!=;:x: You need to enter ID of the person you want to ban!]
+$onlyForIDs[596296441505513483;:x: This is developer only command!] `
+})
+//DM UNBANNED
+bot.command({
+	name: "unblock",
+    code: `$deletecommand
+
+$color[RANDOM]
+$title[You have been unbanned from using this bot]
+$description[I'm very sorry for the mistake I did.
+Report anyone exploiting bot to me or any avaible moderator in the **[support server](https://discord.gg/mt4hDxQpPg)**]
+$footer[If you ever see anyone exploiting the bot, report it in the support server | version: $getVar[version]]
+
+$dm[$mentioned[1]]]
+$suppressErrors
+$onlyForIDs[596296441505513483;] `
+})
+
 //SEARCH - YT
 bot.command({
   name: "search-yt",
   code: `$color[RANDOM]
 $title[YouTube Search]
 $description[Search: $message
-Result: [\[Click Me\\]\\](https://www.youtube.com/search?q=$replaceText[$message; ;+;-1])
+Result: [[Click Me]](https://www.youtube.com/search?q=$replaceText[$message; ;+;-1])
 $footer[Searched by: $username#$discriminator | Version: $getVar[version]]
 $argsCheck[>1;:x: You need to say something!] `
 })
@@ -321,7 +450,7 @@ bot.command({
   code: `$color[RANDOM]
 $title[Google Search]
 $description[Search: $message
-Result: [\[Click Me\\]\\](https://www.google.com/search?q=$replaceText[$message; ;+;-1])]
+Result: [[Click Me]](https://www.google.com/search?q=$replaceText[$message; ;+;-1])]
 $footer[Searched by: $username#$discriminator | Version: $getVar[version]]
 $argsCheck[>1;:x: You need to say something!] `
 })
@@ -333,6 +462,8 @@ $updateCommands
 $onlyForIDs[596296441505513483;:x: Only bot developer can do that!] `
 })
 
+
+///Setting-up
 bot.awaitedCommand({
   name: "setup-confirmed",
   code: `$title[Thank you!]
@@ -353,235 +484,27 @@ $color[RANDOM]`
 })
 
 
-/////////////////////////////////////////////////////
-
-////// H E L P - C O M M A N D S //////
-//HELP - MAIN
-bot.command({
-  name: "help",
-  aliases: ["info", "help"],
-  code: `$color[$random[0000;999999]]
-  $title[❓ | Help Menu]
-  $description[This bot is the continuation of Cnnn666v2 (BETA)
-Support Server: https://discord.gg/mt4hDxQpPg
-$getVar[motd]]
-$addField[:mega: | Announcement ($getVar[anc_title]):;$getVar[anc_desc]]
-  $addField[**NEW** :gear: | Settings • \`$getServerVar[svpx6]settings\`;Change bot's settings in your server and decide which commands are supposed to be turned on it change your language bot's!]
-  $addField[:thumbsup: | Reputation system **SOON** • \`$getServerVar[svpx6]help-rep\`;Check all reputation commands **SOON**;yes]
-  $addField[<a:Developer:815230638365212712> | Developer commands • \`$getServerVar[svpx6]dev-help\`;Check all developing related commands;yes]
-  $addField[📰 | Active season: The Beggining; More info \`$getServerVar[svpx6]ses\`;yes]
-  $addField[👑 | Halls of... • \`$getServerVar[svpx6]halls\`;See all avaible halls in bot!;yes]
-  $addField[:musical_note: | Music • \`$getServerVar[svpx6]help-music\`;See all avaible music commands
-**Note:** This feature is in beta;yes]
-  $addField[🔎 | Search+ • \`$getServerVar[svpx6]help-search\`;All search commands;yes]
-  $addField[⛳ | Other • \`$getServerVar[svpx6]help-misc\`;All miscellaneous commands;yes]
-  $addField[<:vip:796497627822686270> | VIP • \`$getServerVar[svpx6]vip\`;Buy VIP and earn perks! You can buy it with bot currency;yes]
-  $addField[🎖 | Badges:;All info about badges \`$getServerVar[svpx6]badge-info\`;yes]
-  $addField[🎟 | Ticket System • \`$getServerVar[svpx6]help-ticket\`;Soon!;yes]
-  $addField[💷 | Economy • \`$getServerVar[svpx6]help-eco\`;All economy commands such as \`$getServerVar[svpx6]bal\`;yes]
-  $addField[🏳 | Support • \`$getServerVar[svpx6]help-support\`;All support commands such as \`$getServerVar[svpx6]support\`;yes]
-  $addField[ℹ️ | Informative • \`$getServerVar[svpx6]help-info\`;All informative commands such as \`$getServerVar[svpx6]stats\`;yes]
-  $addField[🎩 | Fun • \`$getServerVar[svpx6]help-fun\`;All funny commands;yes]
-  $addField[📈 | Level • \`$getServerVar[svpx6]help-lvl\`;All level commands
-**Note:** this feature is in beta!;yes]
-  $addField[🕹 | Games • \`$getServerVar[svpx6]help-games\`;Check all bot's games!
-**Note:** This will be added soon;yes]
-  $addField[🛡 | Moderation • \`$getServerVar[svpx6]help-mod\`;All moderation commands such as \`$getServerVar[svpx6]ban\`
-**Note:** Moderation feature is in beta, don't recommend using it.;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - GAMES
-bot.command({
-  name: "help-games",
-  aliases: ["info-games", "help-games"],
-  code: `$color[$random[0000;999999]]
-  $title[❓ | Help Menu]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-All bot's minigames]
-$addField[:dagger: | RPG • \`$getServerVar[svpx6]game-rpg\`;Level up, collect items and earn money! **BETA**;no]
-  $addField[$customEmoji[CSGOCnnn666v2] | Counter Strike: Teams • \`$getServerVar[svpx6]game-cst\`;Check your skill in making best csgo team! **COOMING SOON TO ALPHA**;no]
-$addField[??? | Among Us - Task Simulator • \`$getServerVar[svpx6]game-auts\`;Wanna simulate among us tasks? **COOMING SOON TO ALPHA**;no]
-$addField[??? | Among Us - Matchmaking • \`$getServerVar[svpx6]game-aum\`;Wait for 10 players - be crewmate or impostor and win! **COOMING SOON TO EARLY ALPHA**;no]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - ECONOMY
-bot.command({
-  name: "help-eco",
-  aliases: ["info-eco", "help-eco", "info-economy", "help-economy"],
-  code: `$color[$random[0000;999999]]
-  $title[:pound: | Economy commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Who doesn't like money?
-Casino commands -> \`$getServerVar[svpx6]help-casino\` | Codes -> \`$getServerVar[svpx6]codes\`
-All economy commands below:]
-$addField[Search **(Temporarily disabled)** • \`$getServerVar[svpx6]search\`;Search provided places for free money!;yes]
-$addField[Rob **(Temporarily disabled)** • \`$getServerVar[svpx6]rob <@user>\`;Rob someone for a free money;yes]
-$addField[Monthly • \`$getServerVar[svpx6]monthly\`;And even more free money;yes]
-$addField[Weekly • \`$getServerVar[svpx6]weekly\`;More free money;yes]
-$addField[Daily • \`$getServerVar[svpx6]daily\`;Earn daily money for free;yes]
-$addField[Hourly • \`$getServerVar[svpx6]hourly\`;Free money every hour;yes]
-$addField[Mine nCoins • \`$getServerVar[svpx6]n-mine\`;Mine nCoins for 40m and check how much you'll get;yes]
-$addField[Work • \`$getServerVar[svpx6]work\`;Work and get money;yes]
-$addField[Withdraw • \`$getServerVar[svpx6]with\`;Withdraw money and buy things;yes]
-$addField[Deposit • \`$getServerVar[svpx6]dep\`;Deposit money to your bank so no one can rob you;yes]
-$addField[Crime • \`$getServerVar[svpx6]crime\`;You like risk? Win (and get money) or lose (and lose money);yes]
-$addField[Balance • \`$getServerVar[svpx6]bal\`;Check how much you have money!;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - MISC
-bot.command({
-  name: "help-misc",
-  aliases: ["info-misc", "help-misc"],
-  code: `$color[$random[0000;999999]]
-  $title[:golf: | Misc commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Well, there isn't always right category for each command so... they're here
-All misc commands below:]
-$addField[Developer report • \`$getServerVar[svpx6]dev-report <report>\`;Found bug? Report it to me and I'll fix it (depending on the how bad this bug was, you'll get right amount of :pound: as reward and special badge)!;yes]
-$addField[Offers • \`$getServerVar[svpx6]offers\`;Help bot development and get something in!;yes]
-$addField[Weather • \`$getServerVar[svpx6]weather <message>\`;Check weather in the provided city!;yes]
-$addField[Report • \`$getServerVar[svpx6]report <message>\`;Allows users to report things;yes]
-$addField[Suggestion • \`$getServerVar[svpx6]suggest <message>\`;Allows users to suggest things;yes]
-$addField[Poll • \`$getServerVar[svpx6]poll <message>\`;Creates poll of type yes/no. Only admins;yes]
-$addField[Announcement • \`$getServerVar[svpx6]anc <message>\`;Anounces something in emebed! Only for admins;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - MOD
-bot.command({
-  name: "help-mod",
-  aliases: ["info-mod", "help-mod"],
-  code: `$color[$random[0000;999999]]
-  $title[:shield: | Moderation commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Used to moderate server 24/7 by you!
-(If you're looking for auto-moderator, type \`$getServerVar[svpx6]settings-automod\`)
-All moderation commands below:]
-$addField[Mute • \`$getServerVar[svpx6]mute <user> <reason>\`;Mutes mentioned user forever (soon for specified time). Only people with \`mute_members\` permission;yes]
-$addField[Purge • \`$getServerVar[svpx6]purge <amount> (max 100)\`;Clears command, bot response and typed amount. Only people with \`manage_messages\` permission;yes]
-$addField[Kick • \`$getServerVar[svpx6]kick <user> <reason>\`;Kicks mentioned user. Only people with \`kick\` permission;yes]
-$addField[Ban • \`$getServerVar[svpx6]ban <user> <reason>\`;Bans mentioned user. Only people with \`ban\` permission;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - SUPPORT
-bot.command({
-  name: "help-sup",
-  aliases: ["info-sup", "help-sup", "info-support", "help-support"],
-  code: `$color[$random[0000;999999]]
-  $title[:flag_white: | Support commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Need help with bot?
-All support commands bellow:]
-$addField[News • \`$getServerVar[svpx6]news\`;Returns what's new in the latest version;yes]
-$addField[Usage • \`$getServerVar[svpx6]usage\`;Returns bot's usage;yes]
-$addField[Bot • \`$getServerVar[svpx6]bot\`;Returns bot's stats;yes]
-$addField[Support • \`$getServerVar[svpx6]sup\`;Returns bot support such as: link to support server or website;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - MUSIC
-bot.command({
-  name: "help-music",
-  aliases: ["info-music", "help-music"],
-  code: `$color[$random[0000;999999]]
-  $title[:musical_note: | Music commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Who the heck doesn't like music? Music is cool...
-All music commands below. Keep in mind: it's in beta]
-$addField[Stop • \`$getServerVar[svpx6]stop\`;Stops playing current song;yes]
-$addField[Volume • \`$getServerVar[svpx6]vol <amount>\`;Changes volume of the song. Don't recommend setting it to more than 200;yes]
-$addField[Queue • \`$getServerVar[svpx6]queue\`;Returns current queue;yes]
-$addField[Loop • \`$getServerVar[svpx6]loop\`;Loops current queue;yes]
-$addField[Skip • \`$getServerVar[svpx6]skip\`;Skips current song;yes]
-$addField[Play • \`$getServerVar[svpx6]play <name of the song>\`;Adds song to the queue;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - FUN
-bot.command({
-  name: "help-fun",
-  aliases: ["info-fun", "help-fun"],
-  code: `$color[$random[0000;999999]]
-  $title[:rofl: | Fun commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-OMG so funny commands (jk)
-All fun commands below:]
-$addField[**NEW** Captcha • \`$getServerVar[svpx6]captcha <message>\`;I'm not a robot, I'm a bot;yes]
-$addField[Angry NPC • \`$getServerVar[svpx6]npc message-message\`;Makes angry npc meme-nope;yes]
-$addField[Challenge • \`$getServerVar[svpx6]ch <message>\`;Challenge completed! <message>;yes]
-$addField[Error • \`$getServerVar[svpx6]error <message>\`;Error 404 - not found. Couldn't find \`C:\\WINDOWS\\system32\\<message>.exe\`;yes]
-$addField[Change my mind • \`$getServerVar[svpx6]cm <message>\`;<message> | change my mind;yes]
-$addField[Meme • \`$getServerVar[svpx6]meme\`;Sends random meme;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - LEVEL
-bot.command({
-  name: "help-lvl",
-  aliases: ["info-lvl", "help-lvl"],
-  code: `$color[$random[0000;999999]]
-  $title[:bar_chart: | Level commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-It's used for few things. Depends if we're talking about server level or rpg level.
-All levelling commands below:]
-$addField[Level UP • \`$getServerVar[svpx6]lvlup\`;When you have enough XP, level up and get reward!;yes]
-$addField[RPG Levelling:;Level per user (global);no]
-
-$addField[Leaderboard (soon) • \`$getServerVar[svpx6]lb\`;Check leaderboard in $serverName;yes]
-$addField[Rank • \`$getServerVar[svpx6]rank\`;Check your level in $serverName;yes]
-$addField[Server Levelling:;Level per server - soon leaderboard;no]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
-//HELP - SEARCH+
-bot.command({
-  name: "help-search",
-  aliases: ["info-search", "help-search"],
-  code: `$color[$random[0000;999999]]
-  $title[:mag_right: | Search+ commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-Why Search+? Because it's with the "+"!
-All search+ commands below:]
-$addField[Google • \`$getServerVar[svpx6]search-google <message>\`;Googles typed message;yes]
-$addField[YouTube • \`$getServerVar[svpx6]search-yt <message>\`;Searches what you typed on yt;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
-
 //HELP - INFORMATIVE
-bot.command({
-  name: "help-info",
-  aliases: ["info-info", "help-info"],
-  code: `$color[$random[0000;999999]]
-  $title[:information_source: | Informative commands]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
-You don't like the helpful stuff on discord? Explain why, here: ...........
-All informative commands below:]
-$addField[Server Info • \`$getServerVar[svpx6]sinfo\`;Shows server info;yes]
-$addField[User Info • \`$getServerVar[svpx6]uinfo <user>/leave blank for self\`;Shows info about mentioned user or about you if you left it blank;yes]
-  $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
-$onlyIf[$message[1]==;]`
-})
+//bot.command({
+ // name: "help-info",
+  //aliases: ["info-info", "help-info"],
+ // code: `$color[$random[0000;999999]]
+ // $title[:information_source: | Informative commands]
+ // $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
+//You don't like the helpful stuff on discord? Explain why, here: ...........
+//All informative commands below:]
+//$addField[Server Info • \`$getServerVar[svpx6]sinfo\`;Shows server info;yes]
+//$addField[User Info • \`$getServerVar[svpx6]uinfo <user>/leave blank for self\`;Shows info about mentioned user or about you if you left it blank;yes]
+ // $footer[Cnnn666v2 - first not pay2win bot | Version: $getUserVar[version]]
+//$onlyIf[$message[1]==;]`
+//})
 
 //BADGES - INFO
 bot.command({
-  name: "badge-info",
+  name: "badges",
   code: `$color[$random[0000;999999]]
   $title[❓ | Help Menu]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
+  $description[[Support Server](https://discord.gg/mt4hDxQpPg)
 All about badges]
 $addField[Badges • Other question?;Join our support server!;yes]
 $addField[Badges • Are there special badges?;Yes, example is the **VIP** badge which you get after buying VIP. There will also be time limited badges (once bought they're kept forever);yes]
@@ -593,10 +516,10 @@ $onlyIf[$message[1]==;]`
 })
 
 bot.command({
-  name: "badge-info-2",
+  name: "badges-2",
   code: `$color[$random[0000;999999]]
   $title[❓ | Help Menu]
-  $description[[Support Server\\](https://discord.gg/mt4hDxQpPg)
+  $description[[Support Server](https://discord.gg/mt4hDxQpPg)
 All about badges]
 $addField[Unique badges • check what unique badges are;They can be earned in certain ways - depending on the badge. In order to get badge, you have to be in support server;yes]
 $addField[Unique badges • so, let's explore!;<:developerBadge:815845454931689473> - this badge is only for bot developers (in this case, it's only for Cnnn666)
@@ -605,30 +528,4 @@ $addField[Unique badges • so, let's explore!;<:developerBadge:8158454549316894
 <a:verified:817334736342876170> - this badge is granted to **trusted** users of bot;yes]
 $footer[Cnnn666v2 - first not pay2win bot | Page: 2/2 | Version: $getUserVar[version]]
 $onlyIf[$message[1]==;]`
-})
-
-/////////////////////////////////////////////////////
-
-////// H A L L S //////
-//HALL - MAIN
-bot.command({
-  name: "halls",
-  code: `$color[RANDOM]
-$title[Halls Center]
-$description[All halls below:]
-$addField[Hall Of Support • \`$getServerVar[svpx6]hos\`;Shows all people who supported bot;yes]
-$addField[Hall Of Fame • \`$getServerVar[svpx6]hof\`;Shows top 10 commands (suggest them on support server);yes]
-$onlyIf[$message[1]==;] `
-})
-
-//HALL - BEST CMD
-bot.command({
-  name: "hof",
-  code: "soon"
-})
-
-//HALL - SUPPORTERS
-bot.command({
-  name: "hos",
-  code: "soon"
 })

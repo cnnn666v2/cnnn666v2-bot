@@ -11,5 +11,6 @@ $setGlobalUserVar[vip;1]
 $setGlobalUserVar[Money;$sub[$getGlobalUserVar[Money];100000]]
 $onlyIf[$getGlobalUserVar[Money]>=100000;:x: You need 100,000 :pound: to buy VIP]
 $onlyIf[$getGlobalUserVar[vip]==0;:x: You can't have 2 vip cards!]
-$onlyIf[$message[1]==;] `
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake] `
 })

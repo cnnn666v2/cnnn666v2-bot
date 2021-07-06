@@ -10,5 +10,6 @@ $setGlobalUserVar[fcard;1]
 $setGlobalUserVar[Money;$sub[$getGlobalUserVar[Money];1500]]
 $onlyIf[$getGlobalUserVar[Money]>=1500;:x: You need 1500 :pound: to buy license!]
 $onlyIf[$getGlobalUserVar[fcard]==0;:x: You can't have 2 same license cards!]
-$onlyIf[$message[1]==;]`
+$onlyIf[$message[1]==;]
+$onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come [here](https://discord.gg/mt4hDxQpPg) if you believe it's a mistake]`
 })
