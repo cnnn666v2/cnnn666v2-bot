@@ -40,7 +40,7 @@ In some commands, it's messed up. It'll be changed in the future or never
 If you want to have a better look at the `code` field in commands, copy the code, download android emulator (bluestacks for example) and download BDFD app. Create a bot (put anything there) make a "command" and paste  your code there. With this it'll be way better to work with the bigger codes. Currently there isn't any better way to have functions in aoi.js colored unless someone decide to make a code editor specially designed for aoi.js
 
 ## Github changes
-10.07.2021 - Edited readme.md (kinda re-worked) 
+10.07.2021 - Edited readme.md (kinda re-worked) <br />
 28.08.2021 - Made some changes in readme.md
 
 ## Bot Updates
