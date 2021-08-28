@@ -26,17 +26,22 @@ Checkout the COPYING.txt for the full license
 # Information
 Bot is build using [aoi.js](https://aoi.js.org/) package.
 To install it, run `npm i aoi.js` in your command prompt,
-or by adding `"aoi.js": "^4.0.2"` to your `package.json` file.
+or by adding `"aoi.js": "^4.4.4"` to your `package.json` file.
 Docs for that package may be found [there](https://aoi.leref.ga/)
 
 You can invite bot from [there](https://top.gg/bot/794583111647494174/invite/). 
-Currently in **65+** servers with more than **10k** users
+Currently in **60+** servers with more than **10k** users
 
-## Code info
+## Information/Announcements
+**Code Info:**
 In some commands, it's messed up. It'll be changed in the future or never
+
+**Announcement:**
+If you want to have a better look at the `code` field in commands, copy the code, download android emulator (bluestacks for example) and download BDFD app. Create a bot (put anything there) make a "command" and paste  your code there. With this it'll be way better to work with the bigger codes. Currently there isn't any better way to have functions in aoi.js colored unless someone decide to make a code editor specially designed for aoi.js
 
 ## Github changes
 10.07.2021 - Edited readme.md (kinda re-worked)
+28.08.2021 - Made some changes in readme.md
 
 ## Bot Updates
 None
