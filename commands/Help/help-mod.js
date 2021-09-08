@@ -8,7 +8,7 @@ $title[:shield: Moderation]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`kick @user <reason (optional)>\`, \`ban @user <reason (optional)>\`, \`mute @user <reason>\`, \`purge <1 - 100>\`;yes]
+$addField[Available commands:;\`kick @user <reason (optional)>\`, \`ban @user <reason (optional)>\`, \`mute @user <reason>\`, \`purge <1 - 100>\`;yes]
 $footer[More commands soon | Version: $getVar[version]]
 $endif
 
@@ -17,7 +17,7 @@ $title[:pound: Ekonomia]
 $description[Dowiedz się więcej [tutaj](https://cnnn666v2.gq/pl/commands.html)
 Wszystkie komendy zaczynają się z **$getServerVar[svpx6]**]
 $addField[Wyłączone (tymczasowo):;Brak :tada:;yes]
-$addField[Avaible commands:;\`kick @user <powód (opcjonalne)>\`, \`ban @user <powód (opcjonalne)>\`, \`mute @user <powód>\`, \`purge <1 - 100>\`;yes]
+$addField[Available commands:;\`kick @user <powód (opcjonalne)>\`, \`ban @user <powód (opcjonalne)>\`, \`mute @user <powód>\`, \`purge <1 - 100>\`;yes]
 $footer[Więcej komend wkrótce | Wersja: $getVar[version]]
 $endif
 
@@ -26,7 +26,7 @@ $title[:pound: Economy]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;none :tada:;yes]
-$addField[Avaible commands:;\`kick @user <reason (optional)>\`, \`ban @user <reason (optional)>\`, \`mute @user <reason>\`, \`purge <1 - 100>\`;yes]
+$addField[Available commands:;\`kick @user <reason (optional)>\`, \`ban @user <reason (optional)>\`, \`mute @user <reason>\`, \`purge <1 - 100>\`;yes]
 $footer[More commands soon | Version: $getVar[version]]
 $endif
 $onlyIf[$message[1]==;]

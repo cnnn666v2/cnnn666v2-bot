@@ -8,7 +8,7 @@ $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**
 **BIG UPDATE 1.4:** Introducing a lot of new commands, items and features!]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`mine\`, \`hunt\`, \`chop\`, \`fish\`, \`adventure\`, \`profile | prof\`, \`inventory | inv\`, \`recipes\`;yes]
+$addField[Available commands:;\`mine\`, \`hunt\`, \`chop\`, \`fish\`, \`adventure\`, \`profile | prof\`, \`inventory | inv\`, \`recipes\`;yes]
 $footer[RPG is still in beta | Version: $getVar[version]]
 $endif
 
@@ -28,7 +28,7 @@ $description[Get more detailed info [here](https://cnnn666v2.gq/de/commands.html
 All commands starts with **$getServerVar[svpx6]**
 **BIG UPDATE 1.4:** Introducing a lot of new commands, items and features!]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`mine\`, \`hunt\`, \`chop\`, \`fish\`, \`adventure\`, \`profile | prof\`, \`inventory | inv\`, \`recipes\`;yes]
+$addField[Available commands:;\`mine\`, \`hunt\`, \`chop\`, \`fish\`, \`adventure\`, \`profile | prof\`, \`inventory | inv\`, \`recipes\`;yes]
 $footer[RPG is still in beta | Version: $getVar[version]]
 $endif
 $onlyIf[$message[1]==;]

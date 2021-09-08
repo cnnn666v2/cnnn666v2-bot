@@ -3,7 +3,7 @@ module.exports = ({
     code: `$color[RANDOM]
 $title[$customEmoji[pro;795676694161784922] | Pro - Info ***[Coming Soon]***]
 $description[What **PRO** gives **you**:
-⦁ Access to alpha featres - test them before they're released to beta!
+⦁ Access to alpha features - test them before they're released to beta!
 ⦁ Special commands - get access to **pro** only commands
 ⦁ Extended character limit - bored of the regular limits? With **pro** they're extended!
 ⦁ Unique badge - that can't be earned in any other way :)

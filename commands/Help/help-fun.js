@@ -8,7 +8,7 @@ $title[:tophat: Fun]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
+$addField[Available commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
 $footer[New commands soon! | Version: $getVar[version]]
 $endif
 
@@ -26,7 +26,7 @@ $title[:tophat: Fun]
 $description[Get more detailed info [here](https://cnnn666v2.gq/de/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
+$addField[Available commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
 $footer[New commands soon! | Version: $getVar[version]]
 $endif
 $onlyIf[$message[1]==;]

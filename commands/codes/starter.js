@@ -1,7 +1,7 @@
 module.exports = ({
   name: "code-starter",
   code: `Welcome $username!
-Here is your sarter kit: 5,000 :pound: and 1 :coin:
+Here is your starter kit: 5,000 :pound: and 1 :coin:
 Spend them wisely!
 $setGlobalUserVar[ncoin;$sum[$getGlobalUserVar[ncoin];1]]
 $setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money];5000]]

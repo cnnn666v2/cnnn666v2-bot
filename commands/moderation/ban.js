@@ -5,7 +5,7 @@ $description[You have been banned for: $noMentionMessage by: $username#$discrimi
 $footer[Powered by: Cnnn666v2 | Version: $getVar[version]]
 $dm[$mentioned[1]]
 $onlyPerms[ban;]
-$suppressErrors[:x: You have to menton someone!]
+$suppressErrors[:x: You have to mention someone!]
 $color[RANDOM]
 
 $onlyIf[$getGlobalUserVar[blocked]==0;]`
