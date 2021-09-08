@@ -27,7 +27,7 @@ How do I upgrade townhall?
 How can I build houses?
 - do \`$getServerVar[svpx6]build-house\`
 
-My question isn't here, wher can I get anwser?
+My question isn't here, where can I get answer?
 - join support server!]
 $footer[City - BETA in 1.5 | Version: $getVar[version]]
 $onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`

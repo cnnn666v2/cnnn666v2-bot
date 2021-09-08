@@ -7,7 +7,7 @@ $description[What **VIP** gives **you**:
 Farm money faster with \`$getServerVar[svpx6]vip-work\` or \`$getServerVar[svpx6]vip-hourly\` (all commands below)
 
 **Special badge:**
-Show-off your porfile with unique badge!
+Show-off your profile with unique badge!
 
 **Special items and badges:**
 You can buy items with the rarity *Mythic* and *Ultra* (you still can get these without vip but you need big luck)!

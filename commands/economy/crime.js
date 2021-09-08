@@ -3,7 +3,7 @@ module.exports = ({
   code: `$color[RANDOM]
 $title[Crime]
 $if[$random[1;2]==1]
-$description[**$username did successful crime** and got $random[500;1500] :pound: for $randomText[robbering;doing heist;**playing fortnite**;killing someone;stealing someone's credit card]
+$description[**$username did successful crime** and got $random[500;1500] :pound: for $randomText[robbing;doing heist;**playing fortnite**;killing someone;stealing someone's credit card]
 Your wanted level is $random[1;5] :star: which results to not able to do crime again for 12h]
 $setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money];$random[500;1500]]]
 $else

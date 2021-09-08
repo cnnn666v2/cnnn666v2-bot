@@ -8,7 +8,7 @@ $title[:pound: Economy]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;\`search\`;yes]
-$addField[Avaible commands:;\`work\`, \`dep | deposit <amount>\`, \`with | withdraw <amount>\`, \`rob @user\`, \`bal | balance\`, \`crime\`, \`n-mine\`, \`hourly\`, \`daily\`, \`weekly\`, \`monthly\`;yes]
+$addField[Available commands:;\`work\`, \`dep | deposit <amount>\`, \`with | withdraw <amount>\`, \`rob @user\`, \`bal | balance\`, \`crime\`, \`n-mine\`, \`hourly\`, \`daily\`, \`weekly\`, \`monthly\`;yes]
 $footer[Main currency is 💷 | Version: $getVar[version]]
 $endif
 
@@ -26,7 +26,7 @@ $title[:pound: Economy]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;\`search\`;yes]
-$addField[Avaible commands:;\`work\`, \`dep | deposit <amount>\`, \`with | withdraw <amount>\`, \`rob @user\`, \`bal | balance\`, \`crime\`, \`n-mine\`, \`hourly\`, \`daily\`, \`weekly\`, \`monthly\`;yes]
+$addField[Available commands:;\`work\`, \`dep | deposit <amount>\`, \`with | withdraw <amount>\`, \`rob @user\`, \`bal | balance\`, \`crime\`, \`n-mine\`, \`hourly\`, \`daily\`, \`weekly\`, \`monthly\`;yes]
 $footer[Main currency is 💷 | Version: $getVar[version]]
 $endif
 $onlyIf[$message[1]==;]

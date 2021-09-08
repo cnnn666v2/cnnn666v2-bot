@@ -8,7 +8,7 @@ $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**
 **Radio:** Coming Soon to BETA!]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`play | p <song>\`, \`loop\`, \`skip\`, \`stop\`, \`volume <1 - 200>\`, \`nowplaying | np\`;yes]
+$addField[Available commands:;\`play | p <song>\`, \`loop\`, \`skip\`, \`stop\`, \`volume <1 - 200>\`, \`nowplaying | np\`;yes]
 $footer[Soon more features for music! | Version: $getVar[version]]
 $endif
 
@@ -28,7 +28,7 @@ $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**
 **Radio:** Coming Soon to BETA!]
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`play | p <song>\`, \`loop\`, \`skip\`, \`stop\`, \`volume <1 - 200>\`, \`nowplaying | np\`;yes]
+$addField[Available commands:;\`play | p <song>\`, \`loop\`, \`skip\`, \`stop\`, \`volume <1 - 200>\`, \`nowplaying | np\`;yes]
 $footer[Soon more features for music! | Version: $getVar[version]]
 $endif
 $onlyIf[$message[1]==;]

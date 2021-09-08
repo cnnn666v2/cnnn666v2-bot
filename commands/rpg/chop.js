@@ -11,5 +11,5 @@ $onlyIf[$getGlobalUserVar[axe]==1;:x: You need axe to cut trees!]
 $onlyIf[$message[1]==;]
 $onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]
 
-$onlyForIDs[596296441505513483;:x: Command is in testing phase and will be soon avaible for everyone!] `
+$onlyForIDs[596296441505513483;:x: Command is in testing phase and will be soon available for everyone!] `
 })

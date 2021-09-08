@@ -7,7 +7,7 @@ $title[:bar_chart: Levelling]
 $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily);None :tada:;yes]
-$addField[Avaible commands;\`rank\`, \`lvlup\` (rpg);yes]
+$addField[Available commands;\`rank\`, \`lvlup\` (rpg);yes]
 $endif
 
 $onlyIf[$message==;]

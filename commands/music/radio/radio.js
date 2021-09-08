@@ -3,7 +3,7 @@ name: "radio",
 code: `$color[RANDOM]
 $title[Music Radio™ - BETA]
 $description[Welcome to Music Radio™
-This feature is in beta and bugs may occur. There's list of all avaible radios right now:
+This feature is in beta and bugs may occur. There's list of all available radios right now:
 - SpookFM \`$getServerVar[svpx6]radio-spookfm\`
 -- Contains "spooky" songs. Common there is "Spooky scary skeleton"
 
