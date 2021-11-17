@@ -7,15 +7,16 @@ module.exports = ({
   name: "shop",
   code: `$color[RANDOM]
 $thumbnail[$authorAvatar]
-$title[Item Shop - 24/7]
+$title[$customEmoji[shop;795676694161784922] | Item Shop - 24/7]
 $description[Price of 1 :coin: right now: $getVar[ncoinPrice] :pound:
 
 $customEmoji[cs_master;795676694161784922] Promoted:
 $customEmoji[NEW;795676694161784922] Welcome color: GREEN | 1,000 :pound: | Common | \`$getServerVar[svpx6]buy-color-green\`
 $customEmoji[NEW;795676694161784922] Welcome color: ORANGE | 1,000 :pound: | Common | \`$getServerVar[svpx6]buy-color-orange\`
-$customEmoji[NEW;795676694161784922] Welcome thumbnail: Forest | 5,000 :pound: | Common | \`$getServerVar[svpx6]buy-tn-forest\`
-]
-$addField[All items (A - Z);Apple | \`$getServerVar[svpx6]buy-item-apple\` | 10 :pound: | Common
+$customEmoji[NEW;795676694161784922] Welcome thumbnail: Forest | 5,000 :pound: | Common | \`$getServerVar[svpx6]buy-tn-forest\`]
+
+$addField[All items (A - Z);:apple: Apple \`$getServerVar[svpx6]buy-item-apple\` | 10 :pound: | Common
+$customEmoji[ballistic_shield;795676694161784922] Ballistic Shield | \`$getServerVar[svpx6]buy-item-sbal\` | 345,500 :pound: | Epic **[+30 DEF]**
 Fishing Card | \`$getServerVar[svpx6]buy-item-fcard\` | 1,500 :pound: | Common
 Fishing Rod | \`$getServerVar[svpx6]buy-item-frod\` | 2,000 :pound: | Common
 Hunter Rifle | \`$getServerVar[svpx6]buy-item-hrifle\` | 5,000 :pound: | Common]

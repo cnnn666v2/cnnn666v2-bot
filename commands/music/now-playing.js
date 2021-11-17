@@ -1,24 +1,24 @@
 //const
-const duration = `$replaceText[$replaceText[$splitText[1];(;];);] $textSplit[$lavalinkExecute[songinfo;duration]; ]`
-const current = `$replaceText[$replaceText[$splitText[1];(;];);] $textSplit[$lavalinkExecute[songinfo;current_duration]; ]`
-const duration1 = `$replaceText[$replaceText[$splitText[3];(;];);]$textSplit[$lavalinkExecute[songinfo;duration]; ]`
-const current1 = `$replaceText[$replaceText[$splitText[3];(;];);]$textSplit[$lavalinkExecute[songinfo;current_duration]; ]`
+const duration = `$replaceText[$replaceText[$splitText[1];(;];);] $textSplit[$songInfo[duration]; ]`
+const current = `$replaceText[$replaceText[$splitText[1];(;];);] $textSplit[$songInfo[current_duration]; ]`
+const duration1 = `$replaceText[$replaceText[$splitText[3];(;];);]$textSplit[$songInfo[duration]; ]`
+const current1 = `$replaceText[$replaceText[$splitText[3];(;];);]$textSplit[$songInfo[current_duration]; ]`
 
 //code
 module.exports = ({
  name: "nowplaying",
   aliases: ["np"],
-  code: `$title[$lavalinkExecute[songinfo;title];$lavalinkExecute[songinfo;url]]
+  code: `$title[$songInfo[title];$songInfo[url]]
 $description[$getObjectProperty[bar]
 
 \`${current1} / ${duration1}\`
-Publisher: $lavalinkExecute[songinfo;publisher]
-Publisher channel: $lavalinkExecute[songinfo;publisher_url]
+Publisher: $songInfo[publisher]
+Publisher channel: $songInfo[publisher_url]
 **Wanna more? \`$getServerVar[svpx6]help-music\`**
 
 Description:
-$lavalinkExecute[songinfo;description]
-$thumbnail[$lavalinkExecute[songinfo;thumbnail]]
+$songInfo[description]
+$thumbnail[$songInfo[thumbnail]]
 $color[RANDOM]
 $footer[Executed by: $username | Version: $getVar[version]]
 $author[Now Playing;$userAvatar[$clientID]]

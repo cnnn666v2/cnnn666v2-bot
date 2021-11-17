@@ -1,60 +1,24 @@
 module.exports = ({
   name: "mine",
-  code: `$if[$getGlobalUserVar[pickaxe]==1]
-$color[RANDOM]
-$title[:pick: Mining resources]
-$description[You mined in cave for some time and got:
-$random[0;5] stone :rock:
-$random[0;10] dirt <a:dirt:818198721820885063>
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;2;2;2;3] iron]
+  code: `$color[RANDOM]
+$thumbnail[$replaceText[$getGlobalUserVar[welcome_thumbnail];default;$userAvatar[$authorID]]]
 
-$setGlobalUserVar[stone;$sum[$getGlobalUserVar[stone];$random[0;5]]]
-$setGlobalUserVar[dirt;$sum[$getGlobalUserVar[dirt];$random[1;10]]]
-$setGlobalUserVar[iron;$sum[$getGlobalUserVar[iron];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;2;2;2;3]]]
+$title[:pick: • Mining...]
+$description[You went to cave and got:
 
-$elseif[$getGlobalUserVar[pickaxe]==2]
-$description[You mined in cave for some time and got:
-$random[10;25] stone :rock:
-$random[20;45] dirt <a:dirt:818198721820885063>
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1] iron]
+**Resources:**
+**Dirt:** $random[$getGlobalUserVar[dirtMin];$getGlobalUserVar[dirtMax]] • __***Total:***__ *$getGlobalUserVar[dirt]* 
+**Stone:** $random[$getGlobalUserVar[stoneMin];$getGlobalUserVar[stoneMax]] • __***Total:***__ *$getGlobalUserVar[stone]* $replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pickaxe]>=10];true;\n**Iron:** $random[$getGlobalUserVar[ironMin];$getGlobalUserVar[ironMax]] • __***Total:***__ *$getGlobalUserVar[iron]*];false;] $replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pickaxe]>=25];true;\n**Gold:** $random[$getGlobalUserVar[goldMin];$getGlobalUserVar[goldMax]] • __***Total:***__ *$getGlobalUserVar[gold]*];false;] $replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pickaxe]>=50];true;\n**Rubies:** $random[$getGlobalUserVar[rubyMin];$getGlobalUserVar[rubyMax]] • __***Total:***__ *$getGlobalUserVar[ruby]*];false;] $replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pickaxe]>=80];true;\n**Gems:** $random[$getGlobalUserVar[gemMin];$getGlobalUserVar[gemMax]] • __***Total:***__ *$getGlobalUserVar[gem]*];false;]
 
-$setGlobalUserVar[stone;$sum[$getGlobalUserVar[stone];$random[1;10]]]
-$setGlobalUserVar[dirt;$sum[$getGlobalUserVar[dirt];$random[5;20]]]
-$setGlobalUserVar[iron;$sum[$getGlobalUserVar[iron];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1]]]
-$endelseif
+**Experience:**
 
-$elseif[$getGlobalUserVar[pickaxe]==3]
-$description[You mined in cave for some time and got:
-$random[20;50] stone :rock:
-$random[30;75] dirt <a:dirt:818198721820885063>
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;2;2;2;3;3;3;3;4;4;5] iron
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;3;3;3] gold]
+//test]
 
-$setGlobalUserVar[stone;$sum[$getGlobalUserVar[stone];$random[1;10]]]
-$setGlobalUserVar[dirt;$sum[$getGlobalUserVar[dirt];$random[5;20]]]
-$setGlobalUserVar[iron;$sum[$getGlobalUserVar[iron];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;2;2;2;3;3;3;3;4;4]]]
-$setGlobalUserVar[gold;$sum[$getGlobalUserVar[gold];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;3;3;3]]]
-$endelseif
-
-$elseif[$getGlobalUserVar[pickaxe]==4]
-$description[You mined in cave for some time and got:
-$random[1;10] stone :rock:
-$random[5;20] dirt <a:dirt:818198721820885063>
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;2;2;2;3;3;3;3;4;4] iron
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;3;3;3;3;4;4] gold
-$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1] diamond]
-
-$setGlobalUserVar[stone;$sum[$getGlobalUserVar[stone];$random[1;10]]]
-$setGlobalUserVar[dirt;$sum[$getGlobalUserVar[dirt];$random[5;20]]]
-$setGlobalUserVar[iron;$sum[$getGlobalUserVar[iron];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;2;2;2;3;3;3;3;4;4]]]
-$setGlobalUserVar[gold;$sum[$getGlobalUserVar[gold];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;1;1;1;1;1;1;1;2;2;2;2;2;2;3;3;3]]]
-$setGlobalUserVar[gem;$sum[$getGlobalUserVar[gem];$randomText[0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1]]]
-$endelseif
-$else
-:x: You don't have a pickaxe! Buy one using \`$getServerVar[svpx6]buy-item-pickaxe\`
-$endif
+$replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pickaxe]>=2];true;$setGlobalUserVar[iron;$math[$getGlobalUserVar[pickaxe]*$random[1;2]+$getGlobalUserVar[iron]]]];false;]
 
 $onlyIf[$message[1]==;]
+$globalCooldown[1s;:x: You can mine every 5h! Wait %time% to mine again.]
+$onlyIf[$getGlobalUserVar[pickaxe]>=1;:x: You need to buy a pickaxe first!]
 $onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]
 $onlyForIDs[596296441505513483;:x: Command is in testing phase and will be soon avaible for everyone!] `
 })

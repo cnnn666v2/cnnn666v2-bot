@@ -1,15 +1,16 @@
 module.exports = ({
   name: "inventory-com",
-  aliases: [`inv-com`, `inv-cm`, `inventory-cm`],
+  aliases: [`inv-com`, `inv-cm`, `inventory-cm`, `inv-common`, `inventory-common`],
   code: `$color[RANDOM]
 
-$if[$getGlobalUserVar[lang]==en]
 $title[🎒 $username[$mentioned[1;yes]]'s inventory:]
 $thumbnail[$userAvatar[$mentioned[1;yes]]]
 $description[:scroll: Little bio:
 $getGlobalUserVar[welcome_bio]
 
 **:white_large_square: Item List [COMMON]:**]
+$addField[:comet: • Seasonal;None;yes]
+
 $addField[:apple: • Food;Apple: $getGlobalUserVar[apple;$mentioned[1;yes]]
 Bread: $getGlobalUserVar[bread;$mentioned[1;yes]];yes]
 
@@ -23,7 +24,9 @@ Fishing rod: $getGlobalUserVar[fishingRod;$mentioned[1;yes]];yes]
 
 $addField[:crossed_swords: • Weapons;Belt: $getGlobalUserVar[belt;$mentioned[1;yes]]
 Wooden sword: $getGlobalUserVar[sword_wood;$mentioned[1;yes]]
-Wooden shield: $getGlobalUserVar[shield_wood;$mentioned[1;yes]];yes]
+Wooden shield: $getGlobalUserVar[shield_wood;$mentioned[1;yes]]
+Crossbow: $getGlobalUserVar[crossbow_wood;$mentioned[1;yes]]
+Arrows: $getGlobalUserVar[arrow;$mentioned[1;yes]];yes]
 
 $addField[:mountain: • Resources;Dirt: $getGlobalUserVar[dirt;$mentioned[1;yes]]
 Wood log: $getGlobalUserVar[wood_log;$mentioned[1;yes]]
@@ -31,7 +34,6 @@ Stone: $getGlobalUserVar[stone;$mentioned[1;yes]]
 Stick: $getGlobalUserVar[sticks;$mentioned[1;yes]];yes]
 
 $footer[Season: $getVar[season] | Page: 1/$getVar[inventory_pt] | Version: $getVar[version]]
-$endif
 
 $onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

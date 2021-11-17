@@ -6,14 +6,17 @@ $description[What **PRO** gives **you**:
 ⦁ Access to alpha featres - test them before they're released to beta!
 ⦁ Special commands - get access to **pro** only commands
 ⦁ Extended character limit - bored of the regular limits? With **pro** they're extended!
+⦁ Lowered cooldowns - some commands have lowered cooldown!
 ⦁ Unique badge - that can't be earned in any other way :)
 ⦁ Stays  forever - enjoy it for your whole life!
+⦁ Free 3 pages on bot's webste with custom and my css for free!
 ⦁ And more to come - soon
 
 **Price:**
+*Ability to buy soon*
 Discord nitro/classic - 1x
 Steam giftcard - 1x
-2,500,000 :pound: - \`c2?pro-buy\`
+~~2,500,000~~ 1,500,000 :pound: - \`c2?pro-buy\`
 
 **Questions?**
 Feel free to dm me (Cnnn666#5460)!]

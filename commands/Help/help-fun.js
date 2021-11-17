@@ -1,6 +1,6 @@
 module.exports = ({
-name: "help-eco",
-aliases: ['help-economy'],
+name: "help-fun",
+aliases: ['help-funny'],
 code: `$color[RANDOM]
 $thumbnail[$userAvatar[$authorID]]
 $if[$getGlobalUserVar[lang]==en]
@@ -10,25 +10,27 @@ All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;None :tada:;yes]
 $addField[Avaible commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
 $footer[New commands soon! | Version: $getVar[version]]
-$endif
 
-$if[$getGlobalUserVar[lang]==pl]
+$elseif[$getGlobalUserVar[lang]==pl]
 $title[:tophat: Zabawne]
 $description[Dowiedz się więcej [tutaj](https://cnnn666v2.gq/pl/commands.html)
 Wszystkie komendy zaczynają się z **$getServerVar[svpx6]**]
-$addField[Wyłączone (tymczasowo):;Brak :tada:`;yes]
+$addField[Wyłączone (tymczasowo):;Brak :tada:;yes]
 $addField[Dostępne komendy:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
 $footer[Nowe komendy wkrótce! | Wersja: $getVar[version]]
-$endif
+$endelseif
 
-$if[$getGlobalUserVar[lang]==de]
+$elseif[$getGlobalUserVar[lang]==de]
 $title[:tophat: Fun]
 $description[Get more detailed info [here](https://cnnn666v2.gq/de/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 $addField[Disabled (temporarily):;None :tada:;yes]
 $addField[Avaible commands:;\`meme\` (soon fix), \`cm <text>\`, \`ch <text>\`, \`npc text-text\`, \`captcha <text>\`;yes]
 $footer[New commands soon! | Version: $getVar[version]]
+
+$endelseif
 $endif
+
 $onlyIf[$message[1]==;]
 $onlyIf[$getGlobalUserVar[blocked]==0;:x: You have been blocked from using this bot! Come here ($getVar[support_server]) if you believe it's a mistake]`
 })

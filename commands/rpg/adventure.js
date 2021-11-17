@@ -4,8 +4,8 @@ module.exports = ({
 $title[:dagger: | Adventure]
 $description[You went on a dangerous adventure and got:
 $numberSeparator[$random[1000;5000];,] :pound:
-$random[25;70] XP
-$random[0;1] Common lootbox]
++ $random[25;70] XP
++ $random[0;1] Common lootbox]
 $footer[o==\[\\]::::::A̶d̶v̶e̶n̶t̶u̶r̶e̶ ̶T̶i̶m̶e̶::::::::> | Version: $getVar[version]]
 
 $setGlobalUserVar[Money;$sum[$getGlobalUserVar[Money];$random[1000;5000]]]

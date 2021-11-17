@@ -3,8 +3,11 @@ module.exports = ({
   aliases: [`profile`, `prof`],
   code: `$color[RANDOM]
 
-$author[$username[$mentioned[1;yes]];$userAvatar[$mentioned[1;yes]]]
-$description[**$replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pro;$mentioned[1;yes]]==1];true;<:pro:820305416877113414> $username's;1];false;$username's;1] stats:**]
+$author[$username[$mentioned[1;yes]]#$discriminator[$mentioned[1;yes]];$userAvatar[$mentioned[1;yes]]]
+$description[:scroll: Little bio:
+$getGlobalUserVar[welcome_bio;$mentioned[1;yes]]
+
+**$replaceText[$replaceText[$checkCondition[$getGlobalUserVar[pro;$mentioned[1;yes]]==1];true;<:pro:820305416877113414> $username's;1];false;$username's;1] stats:**]
 $thumbnail[$userAvatar[$mentioned[1;yes]]]
 
 $addField[:mega: • Announcement ($getGlobalUserVar[anc_title_prof]);

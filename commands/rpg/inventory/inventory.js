@@ -5,7 +5,7 @@ module.exports = ({
 $thumbnail[$userAvatar[$mentioned[1;yes]]]
 $if[$getGlobalUserVar[lang]==en]
 $title[:school_satchel: Inventory - $username[$mentioned[1;yes]]]
-$description[To check all items, use following commands:
+$description[**To check all items, use following commands:**
 \`$getServerVar[svpx6]inventory-com\` - common items :white_large_square:
 \`$getServerVar[svpx6]inventory-ucom\` - uncommon items :green_square:
 \`$getServerVar[svpx6]inventory-rare\` - rare items :blue_square:
@@ -13,7 +13,13 @@ $description[To check all items, use following commands:
 \`$getServerVar[svpx6]inventory-ep\` - epic items :purple_square:
 \`$getServerVar[svpx6]inventory-leg\` - legendary items :yellow_square:
 \`$getServerVar[svpx6]inventory-myt\` - mythic items :red_square:
-\`$getServerVar[svpx6]inventory-ult\` - ultra items :black_large_square:]
+\`$getServerVar[svpx6]inventory-ult\` - ultra items :black_large_square:
+
+**Special Categories:**
+\`$getServerVar[svpx6]inventory-furniture\` - all your furniture :file_cabinet:
+
+*[COMING SOON]*
+\`$getServerVar[svpx6]inventory-pc\` - PC parts :desktop:]
 $footer[RPG Update! | Version: $getVar[version]]
 $endif
 
@@ -27,7 +33,12 @@ $description[Żeby sprawdzić wszystkie przedmioty, użyj poniższych komend:
 \`$getServerVar[svpx6]inventory-ep\` - epickie przedmioty :purple_square:
 \`$getServerVar[svpx6]inventory-leg\` - legendarne przedmioty :yellow_square:
 \`$getServerVar[svpx6]inventory-myt\` - mityczne przedmioty :red_square:
-\`$getServerVar[svpx6]inventory-ult\` - ultra przedmioty :black_large_square:]
+\`$getServerVar[svpx6]inventory-ult\` - ultra przedmioty :black_large_square:
+
+**Special Categories:**
+\`$getServerVar[svpx6]inventory-furniture\` - all your furniture :file_cabinet:
+*[COMING SOON]*
+\`$getServerVar[svpx6]inventory-pc\` - PC parts :desktop:]
 $footer[RPG Update! | Version: $getVar[version]]
 $endif
 
@@ -41,7 +52,12 @@ $description[To check all items, use following commands:
 \`$getServerVar[svpx6]inventory-ep\` - epic items :purple_square:
 \`$getServerVar[svpx6]inventory-leg\` - legendary items :yellow_square:
 \`$getServerVar[svpx6]inventory-myt\` - mythic items :red_square:
-\`$getServerVar[svpx6]inventory-ult\` - ultra items :black_large_square:]
+\`$getServerVar[svpx6]inventory-ult\` - ultra items :black_large_square:
+
+**Special Categories:**
+\`$getServerVar[svpx6]inventory-furniture\` - all your furniture :file_cabinet:
+*[COMING SOON]*
+\`$getServerVar[svpx6]inventory-pc\` - PC parts :desktop:]
 $footer[RPG Update! | Version: $getVar[version]]
 $endif
 

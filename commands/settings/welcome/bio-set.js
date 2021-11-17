@@ -14,7 +14,7 @@ Character count: $charCount[$message]/300]
 
 $setGlobalUserVar[welcome_bio;$message]
 $globalCooldown[12h;:x: You can change bio every 12h! Wait %time% to change it again.
-$randomText[ ; ; ; ;TIP: buy **PRO** to lower cooldown to 2h.]]
+$randomText[ ; ; ; ;TIP: buy **VIP** to lower cooldown to 6h.]]
 $endif
 
 	$elseif[$getGlobalUserVar[vip]==1]
@@ -32,9 +32,7 @@ Character count: $charCount[$message]/500]
 $setGlobalUserVar[welcome_bio;$message]
 $globalCooldown[6h;:x: You can change bio every 6h! Wait %time% to change it again.
 $randomText[ ; ; ; ;TIP: buy **PRO** to lower cooldown to 2h.]]
-		$endif
-
-	$if[$getGlobalUserVar[pro]==1]
+					$elseif[$getGlobalUserVar[pro]==1]
 		$if[$charCount[$message]>750]
 :x: Your bio can be 750 character long
 			$else
@@ -49,7 +47,8 @@ Character count: $charCount[$message]/750]
 $setGlobalUserVar[welcome_bio;$message]
 $globalCooldown[2h;:x: You can change bio every 2h! Wait %time% to change it again.]
 		$endif
-	$endif
+	$endelseif
+		$endif
 $endelseif
 
 $footer[Remember to read rules for bio at https://cnnn666v2.gq/welcome/rules.html | Version: $getVar[version]]

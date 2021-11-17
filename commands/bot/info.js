@@ -5,9 +5,6 @@ module.exports = ({
   $title[Bot Stats:]
 $addField[Packages:;Aoi.JS: $packageVersion
 Node.JS: $nodeVersion;yes]
-$addField[Hosting provider:;**Sweplox Hosting**
-[Discord server](https://discord.gg/beRhE87qp2)
-[Website](https://sweplox.se/?language=english&currency=);yes]
 $addField[Back-end:;CPU: $cpu%
 RAM: $rammb
 Ping: $pingms;yes]

@@ -1,10 +1,14 @@
 module.exports = ({
-name: "test test",
+name: "test",
 code: `If you see this - everything works!
 Test command:
 space command
 $replaceText[test test; ;-]
-$onlyForIDs[596296441505513483;:x: Only developer can use this command] `
+
+$if[$djsEval[$getGlobalUserVar[pickaxe]%10;yes]==0]
+Pickaxe level $getGlobalUserVar[pickaxe]
+$endif
+$onlyForIDs[596296441505513483;:x: Only developer can use this command]`
 })
 
 //$color[WHITE]
