@@ -1,7 +1,7 @@
 module.exports = {
 //Misc
     robM: "0",
-    authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc5NDU4MzExMTY0NzQ5NDE3NCIsImJvdCI6dHJ1ZSwiaWF0IjoxNjE3MDA0MDE4fQ.vh3r78DuMRJNlEHsPsatYpUZndWJgxrp2xUeoqVRuaY",
+    authorization: "topgg authorization key or smthn idk",
 
 //Subs
     pro: "0",

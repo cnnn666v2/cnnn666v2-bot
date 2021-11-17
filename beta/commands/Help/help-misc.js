@@ -7,7 +7,7 @@ $description[Get more detailed info [here](https://cnnn666v2.gq/commands.html)
 All commands starts with **$getServerVar[svpx6]**]
 
 $addField[Disabled (temporarily):;None :tada:;yes]
-$addField[Avaible commands:;\`announcement <message> | anc <message>\`, \`offers\`, \`poll <message>\` - yes/no type, \`report <message>\`, \`suggest <message>\`, \`weather <city>\`;yes]
+$addField[Avaible commands:;\`announcement <message> | anc <message>\`, \`offers\`, \`poll <message>\` - yes/no type, \`report <message>\`, \`suggest <message>\`, \`weather <city>\`, \`math <calculation>\`;yes]
 $footer[More commands soon! | Version: $getVar[version]]
 
 $onlyIf[$message[1]==;]
