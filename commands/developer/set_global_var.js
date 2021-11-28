@@ -2,5 +2,6 @@ module.exports = ({
     name: "set-global",
     code: `$setGlobalUserVar[$message[1];$message[2];$mentioned[1]]
 Done!
-$onlyForIDs[596296441505513483;:x: Only bot developer can do that!]`
+$onlyIf[$getGlobalUserVar[TMember_lvl]>=2;:x: You need to have at least level 2 of permissions!]
+$onlyIf[$getGlobalUserVar[TMember_is]==true;:x: Only bot's staff can change this!]`
 })

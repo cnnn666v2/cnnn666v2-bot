@@ -1,5 +1,6 @@
 module.exports = ({
-name: "test",
+name: "test test",
+$if: "v4",
 code: `If you see this - everything works!
 Test command:
 space command

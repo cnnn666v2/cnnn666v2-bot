@@ -9,7 +9,8 @@ $description[User <@$mentioned[1]> has been banned from using bot for: $messageS
 $footer[If you ever see anyone exploiting the bot, report it in the support server | version: $getVar[version]]
 
 $onlyIf[$message!=;:x: You need to enter ID of the person you want to ban!]
-$onlyForIDs[596296441505513483;:x: This is developer only command!]`
+$onlyIf[$getGlobalUserVar[TMember_lvl]>=2;:x: You need to have at least level 2 of permissions!]
+$onlyIf[$getGlobalUserVar[TMember_is]==true;:x: Only bot's staff can change this!]`
 }), //DM's blocked user
 ({
   name: "block",
@@ -23,5 +24,7 @@ $footer[If you ever see anyone exploiting the bot, report it in the support serv
 
 $dm[$mentioned[1]]
 $suppressErrors
-$onlyForIDs[596296441505513483;]`
+
+$onlyIf[$getGlobalUserVar[TMember_lvl]>=2;]
+$onlyIf[$getGlobalUserVar[TMember_is]==true;]`
 })

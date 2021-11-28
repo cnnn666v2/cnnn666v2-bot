@@ -17,9 +17,25 @@ module.exports = {
     blocked: "0",
     support_server: "https://discord.gg/mt4hDxQpPg",
     suggestionID: "0",
+
+    //Team
+        TMember_lvl: "0",
+          // TMember_lvl is used for level permission that bot staff can do, lvl 1 is the lowest and lvl 3 is the highest. In the future there might come more levels
+        TMember_is: "false",
     
-//music
+//Music
     isplaying: "0",
+
+    //Featured
+        //Song
+        songRec_title: "null",
+        songRec_length: "null",
+        songRec_choice: "null",
+
+        //Playlist
+        playlistRec_songs: "null",
+        playlistRec_genre: "null",
+        playlistRec_choice: "null",
 
 //Announcements
     //Main

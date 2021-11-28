@@ -6,21 +6,22 @@ $onlyIf[$voiceID[$authorID]!=;:x: You need to join voice channel first!]
 $if[$message!=]
 $setServerVar[isplaying;1]
 
-$color[RANDOM]
-$title[$songInfo[title];$songInfo[url]]
-$description[Added \`$playSong[$message;1m;yes;no;:x: Error occured!]\` to the queue]
-$footer[Queue -> $getServerVar[svpx6]queue | Version: $getVar[version]]
-$suppressErrors[:x: Something went wrong]
+$color[1;RANDOM]
+$title[1;$songInfo[title];$songInfo[url]]
+$description[1;Added \`$playSong[$message;1m;yes;no;:x: Error occured!]\` to the queue]
+$footer[1;Queue -> $getServerVar[svpx6]queue | Version: $getVar[version]]
+
 $endif
 
 $elseif[$getServerVar[isplaying]==1]
-$color[RANDOM]
-$title[$songInfo[title];$songInfo[url]]
-$description[Added \`$playSong[$message;1m;yes;no;:x: Error occured!]\` to the queue]
-$footer[Queue -> $getServerVar[svpx6]queue | Version: $getVar[version]]
-$suppressErrors[:x: Something went wrong]
+$color[1;RANDOM]
+$title[1;$songInfo[title];$songInfo[url]]
+$description[1;Added \`$playSong[$message;1m;yes;no;:x: Error occured!]\` to the queue]
+$footer[1;Queue -> $getServerVar[svpx6]queue | Version: $getVar[version]]
+
 
 $onlyIf[$voiceID[$authorID]==$voiceID[$clientID];:x: You need to be in the same voice channel with the bot!]
+
 $endelseif
 $endif
 

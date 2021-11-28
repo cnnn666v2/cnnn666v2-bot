@@ -128,6 +128,7 @@ bot.onLeave
 //Random price of nCoins
 bot.loopCommand({
 code:`$setVar[ncoinPrice;$random[100;5000]]`,
+channel: "795681330473598996",
 every: "3600000"// if 24h doesn't work use 86400000
 })
 
@@ -177,7 +178,7 @@ $if[$getGlobalUserVar[health;$authorID]<=0]
 		$setGlobalUserVar[armor_gold;0]
 		$setGlobalUserVar[armor_diamond;0]
 
-    $setGlobalUserVar[book_enchant;0]
+    	$setGlobalUserVar[book_enchant;0]
 
 		$setGlobalUserVar[potion_hp;0]
 
@@ -239,6 +240,7 @@ $endif`,
 //Message Of The Day
 bot.loopCommand({
 code:`$setVar[motd;**MOTD:** $randomText[Wait for discounts to buy some items cheaper!;Seasons are being choosen by **you**! Vote for the next season in the \`$getServerVar[svpx6]support\` server;Error 403 - access denied to see [content\\](https://cnnn666-games.cf/cnnn666v2bot/en/home);This is beta feature. Btw, did u know that actual version of bot is $getVar[version]?;There is **NO** useful info;Loading MOTD, please wait...;Error corrupted - you have been charged 25k :pound: for causing the error;Please no, don't turn me into oversimplified lo-;const message_send = req('cnnn666v2');Ya'll wait till I make Counter Strike: Teams;Rate bot using \`$getServerVar[svpx6]rate <stars (1-5)> <opinion (optional)>\` (soon)]]`,
+channel: "795681330473598996",
 every: "86400000"// if 24h doesn't work use 86400000
 })
 
