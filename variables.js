@@ -37,6 +37,11 @@ module.exports = {
         playlistRec_genre: "null",
         playlistRec_choice: "null",
 
+        //PC Shop
+        dealRec_name: "null",
+        dealRec_price: "null",
+        dealRec_power: "null",
+
 //Announcements
     //Main
         anc_title: "Update 1.4",
