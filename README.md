@@ -1,6 +1,7 @@
 # WARNING!
 Aoi.js v5.0.0 isn't compatible with the current version of bot. Latest compatible version is v4.5.0 <br />
-To install it, run `npm i aoi.js@4.5.0`
+To install it, run `npm i aoi.js@4.5.0` <br />
+PROJECT IS OFFICIALLY ABANDONED, MORE INFO ON DISCORD
 
 # Cnnn666v2 - Free&Open-Source bot
 That's right! Tired of other bots being closed-source? Well, there you aren't!
